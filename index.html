@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Budget App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Budget App</h1>
+        <div class="budget-period">
+            <h2>Budget Period</h2>
+            <select id="budgetMonth">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <select id="budgetYear">
+                <!-- Add years dynamically using JavaScript -->
+            </select>
+        </div>
+        <div class="input-sections">
+            <div id="incomeForm" class="input-form">
+                <h2>Add Income</h2>
+                <input type="text" id="incomeDescription" placeholder="Description">
+                <input type="number" id="incomeAmount" placeholder="Amount">
+                <input type="date" id="incomeDate">
+                <div class="recurring-options">
+                    <label><input type="checkbox" id="incomeRecurring"> Recurring</label>
+                    <select id="incomeFrequency" disabled>
+                        <option value="weekly">Weekly</option>
+                        <option value="biweekly">Biweekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+                <button id="addIncomeButton">Add Income</button>
+            </div>
+            <div id="expenseForm" class="input-form">
+                <h2>Add Expense</h2>
+                <input type="text" id="expenseDescription" placeholder="Description">
+                <input type="number" id="expenseAmount" placeholder="Amount">
+                <input type="date" id="expenseDate">
+                <div class="recurring-options">
+                    <label><input type="checkbox" id="expenseRecurring"> Recurring</label>
+                    <select id="expenseFrequency" disabled>
+                        <option value="weekly">Weekly</option>
+                        <option value="biweekly">Biweekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+                <button id="addExpenseButton">Add Expense</button>
+            </div>
+        </div>
+        <div id="entriesList"></div>
+        <button id="generateReportButton">Generate Report</button>
+        <div id="result"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
